@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Realidad Aumentada</title>
+      <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/estilos.css" rel="stylesheet"> 
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="Index.html">Inicio</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="2.html">Cómo llegar</a></li>
+            <li><a href="3.html">Galería de imágenes</a></li>
+            <li><a href="rvirtual.html">Realidad Virtual</a></li>
+            <li><a href="">Realidad Aumentada</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+	<a-scene embedded artoolkit='sourceType: webcam;'>
+  <a-assets>
+  <!-- Chichenitza  -->   
+    <a-asset-item id="chichenitza-obj" src="modelos3d/chichenitza.obj"></a-asset-item>
+    <a-asset-item id="chichenitza-mtl" src="modelos3d/chichenitza.mtl"></a-asset-item>
+
+<!-- Chichenintza en formato ply-->
+ <a-asset-item id="modeloPly" src="modelos3d/chichenitza.ply"></a-asset-item> 
+     
+  </a-assets>
+
+  <a-text value="" color="#300"
+          position="-3.5 3 1" scale="1 1 1"></a-text>
+          
+<!-- Agregar un modelo 3d en formato .obj 
+   <a-entity obj-model="obj: #chichenitza-obj; mtl: #chichenitza-mtl"  scale=".05 .05 .05" position="-0.5 0 -0.5"></a-entity>       
+   -->  
+      
+ <!-- Modelo Chichenitza en formato ply
+      
+     <a-entity ply-model="src: #modeloPly" rotation="-45 30 0" scale="0.4 0.4 0.4" position="0 0 -5"></a-entity>
+ -->     
+<!---->
+  <a-entity obj-model="obj: #chichenitza-obj; mtl: #chichenitza-mtl"  scale=".05 .05 .05" position="-1 2 -0.5"></a-entity>  
+
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>  
+</body>
+</html>
